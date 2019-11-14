@@ -1,32 +1,43 @@
 function kaliTerusRekursif(angka) {
     // you can only write your code here!
 
-    // var angkaPertama = strAngka[0]
-    var result = angka
-    var mulai = angka
-    // while loop selama result diatas 10 atau dia null
+    // // var angkaPertama = strAngka[0]
+    // var result = angka
+    // var mulai = angka
+    // // while loop selama result diatas 10 atau dia null
 
-    while (result >= 10) {
-        result = 1
+    // Jika angka masih lebih besar dari 10
+        // maka -> Melakukan looping perkalian dan memanggil fungsi secara rekursif
+        //         dengan parameter hasil dari yang sudah di loop
+    // jika angka lebih kecil dari 10
+        // maka -> Return angka tersebut
 
-        for (var i = 0; i < String(mulai).length; i++) {
+    // while (result >= 10) {
+    //     result = 1
 
-           result *= Number(String(mulai)[i])  
-        }
-        mulai = result
+        // for (var i = 0; i < String(mulai).length; i++) {
+
+        //    result *= Number(String(mulai)[i])  
+        // }
+    //     mulai = result
         
-    }
+    // }
         
     
 
-return result
+    var result = String(angka)
+    var start = Number(result[0])
+    // var mulai = angka
 
-    // var stringAngka = String(angka)
-    // var result = 1
+    if (Number(result) < 10) {return result}
 
-    // if (stringAngka.length === 1) {return result}
+    else {
+        for (var i = 1; i < result.length; i++) {
 
-    // else {return Number(stringAngka[0]) * kaliTerusRekursif(stringAngka.slice(1))}
+            start *= Number(result[i])
+         }
+    }
+    return kaliTerusRekursif(start)
   }
   
   // TEST CASES
